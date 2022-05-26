@@ -28,9 +28,9 @@ func TestFindUserByEmail(t *testing.T) {
 	rows := sqlmock.NewRows([]string{"id", "email", "pass"}).
 		AddRow(10, "test@gm.com", "abc@123")
 	mock.ExpectQuery(query).WithArgs("test@gm.com").WillReturnRows(rows)
-	user, ifFound, err := repo.FindUserByEmail("test@gm.com")
+	user, isFound, err := repo.FindUserByEmail("test@gm.com")
 	assert.NotNil(t, user)
-	assert.Equal(t, true, ifFound)
+	assert.Equal(t, true, isFound)
 	assert.NoError(t, err)
 
 }

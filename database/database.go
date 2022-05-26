@@ -29,7 +29,7 @@ func (db Connection) DBConnect() *sql.DB {
 	dbConfigs := db.DBConfig
 
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+"password=%s dbname=%s sslmode=disable", dbConfigs.Host, dbConfigs.Port, dbConfigs.User, dbConfigs.Password, dbConfigs.DBName)
-	// dbConn, errConn := sql.Open("postgres", dbConfigs.User+":"+dbConfigs.Password+"@tcp("+dbConfigs.Host+")/"+dbConfigs.DBName)
+	// dbConn, errConn := sql.Open("mysql", dbConfigs.User+":"+dbConfigs.Password+"@tcp("+dbConfigs.Host+")/"+dbConfigs.DBName)
 	dbConn, errConn := sql.Open("postgres", psqlInfo)
 
 	if errConn != nil {

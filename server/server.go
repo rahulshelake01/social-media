@@ -3,8 +3,8 @@ package server
 import (
 	"net/http"
 	"os"
+	"social-media/api/router"
 	"social-media/api/v1/repository"
-	"social-media/api/v1/router"
 	"social-media/api/v1/services"
 	"social-media/config"
 	"social-media/database"
